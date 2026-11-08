@@ -1,6 +1,6 @@
 ﻿namespace Accounting
 {
-    partial class Form1
+    partial class frmCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnCustomer = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Form1
+            // toolStrip1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnCustomer});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1232, 74);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Image = global::Accounting.Properties.Resources._1371476468_preferences_contact_list;
+            this.btnCustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(173, 69);
+            this.btnCustomer.Text = "اشخاص طرف حساب";
+            this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
+            // frmCustomer
+            // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1232, 662);
+            this.Controls.Add(this.toolStrip1);
+            this.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmCustomer";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Text = "حسابداری شخصی من";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnCustomer;
     }
 }
 

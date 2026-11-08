@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Accounting
 {
-    public partial class Form1 : Form
+    public partial class frmCustomer : Form
     {
-        public Form1()
+        public frmCustomer()
         {
             InitializeComponent();
         }
@@ -20,6 +20,12 @@ namespace Accounting
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            frmAddOrEdit frmAddOrEdit = new frmAddOrEdit();
+            frmAddOrEdit.ShowDialog();
         }
     }
 }

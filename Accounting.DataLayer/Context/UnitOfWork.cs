@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Accounting.DataLayer.Repository;
+using System;
 
 namespace Accounting.DataLayer.Context
 {
-    internal class UnitOfWork
+    public class UnitOfWork
     {
+        Accounting_DBEntities db;
+
+        private ICustomerRepository _customerRepository;
+        public ICustomerRepository CustomerRepository
+        public ICustomerRepository CustomerRepository
+        {
+        //    get
+        //    {
+        //        if (_customerRepository == null)
+        //        {
+        //            _customerRepository = CustomerRepository;
+        //            return _customerRepository;
+        //        }
+        }
+
+
     }
 }
