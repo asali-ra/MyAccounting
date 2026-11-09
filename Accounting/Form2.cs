@@ -11,6 +11,7 @@ using System.Data.Entity;
 using Accounting.DataLayer;
 using Accounting.DataLayer.Repository;
 using Accounting.DataLayer.Service;
+using Accounting.DataLayer.Context;
 
 
 namespace Accounting
@@ -34,6 +35,7 @@ namespace Accounting
         }
         public void BindGrid()
         {
+            UnitOfWork db = new UnitOfWork();   
             
 
         }
