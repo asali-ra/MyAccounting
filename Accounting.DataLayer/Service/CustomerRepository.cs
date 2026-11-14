@@ -67,12 +67,6 @@ namespace Accounting.DataLayer.Service
             catch { return false; }
         }
 
-        public void Save()
-        {
-            db.SaveChanges();
-
-        }
-
     }
 }
 

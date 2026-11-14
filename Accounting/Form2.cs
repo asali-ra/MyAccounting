@@ -39,5 +39,22 @@ namespace Accounting
             
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+
+                if (dgCustomer.CurrentRow.Cells[0].Value.ToString() != null)
+                {
+                    int id = Convert.ToInt32(dgCustomer.CurrentRow.Cells[0].ToString());
+                    db.CustomerRepository.DeleteCustomer(id);
+                }
+                else
+                {
+                    MessageBox.Show("لطفا یک کاربر را انتخاب کنید");
+                }
+            }
+        }
     }
 }
