@@ -36,6 +36,11 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.dgCustomer = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomer)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +92,7 @@
             this.btnDelete.Text = "حذف شخص";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDelete.ToolTipText = "ویرایش شخص";
-            this.btnDelete.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRefresh
             // 
@@ -115,15 +120,66 @@
             // 
             // dgCustomer
             // 
+            this.dgCustomer.AllowUserToAddRows = false;
+            this.dgCustomer.AllowUserToDeleteRows = false;
+            this.dgCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCustomer.Location = new System.Drawing.Point(11, 102);
+            this.dgCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Name,
+            this.mobile,
+            this.Address,
+            this.Email});
+            this.dgCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgCustomer.Location = new System.Drawing.Point(0, 67);
             this.dgCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgCustomer.Name = "dgCustomer";
+            this.dgCustomer.ReadOnly = true;
             this.dgCustomer.RowHeadersWidth = 62;
             this.dgCustomer.RowTemplate.Height = 28;
-            this.dgCustomer.Size = new System.Drawing.Size(886, 368);
+            this.dgCustomer.Size = new System.Drawing.Size(904, 414);
             this.dgCustomer.TabIndex = 1;
-            this.dgCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCustomer_CellContentClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "CustomerID";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "FullName";
+            this.Name.HeaderText = "نام";
+            this.Name.MinimumWidth = 6;
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // mobile
+            // 
+            this.mobile.DataPropertyName = "Mobile";
+            this.mobile.HeaderText = "موبایل";
+            this.mobile.MinimumWidth = 6;
+            this.mobile.Name = "mobile";
+            this.mobile.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "آدرس";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "ایمیل";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // frmAddOrEdit
             // 
@@ -133,10 +189,10 @@
             this.Controls.Add(this.dgCustomer);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmAddOrEdit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "فرم اشخاص";
+            this.Load += new System.EventHandler(this.frmAddOrEdit_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCustomer)).EndInit();
@@ -155,5 +211,10 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox txtSearch;
         private System.Windows.Forms.DataGridView dgCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

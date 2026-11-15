@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.Entity;
-using Accounting.DataLayer;
-using Accounting.DataLayer.Repository;
-using Accounting.DataLayer.Service;
+﻿using Accounting.DataLayer;
 using Accounting.DataLayer.Context;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 
 namespace Accounting
@@ -27,16 +18,15 @@ namespace Accounting
         {
 
         }
-
-        private void dgCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
         public void BindGrid()
         {
-            UnitOfWork db = new UnitOfWork();   
-            
+            UnitOfWork db = new UnitOfWork();
+            List<Customers> allCustomer = db.CustomerRepository.GetAllCustomers();
+            dgCustomer.AutoGenerateColumns = false;
+
+            dgCustomer.DataSource = allCustomer;
+
+
 
         }
 
@@ -44,17 +34,51 @@ namespace Accounting
         {
             using (UnitOfWork db = new UnitOfWork())
             {
+                string name = dgCustomer.CurrentRow.Cells[1].Value.ToString();
 
-                if (dgCustomer.CurrentRow.Cells[0].Value.ToString() != null)
+
+
+                if (MessageBox.Show($"آیا برای حذف {name}مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    int id = Convert.ToInt32(dgCustomer.CurrentRow.Cells[0].ToString());
-                    db.CustomerRepository.DeleteCustomer(id);
+                    int id = Convert.ToInt32(dgCustomer.CurrentRow.Cells[0].Value.ToString());
+                    if (id != 0)
+                    {
+
+                        bool response = db.CustomerRepository.DeleteCustomer(id);
+                        if (response)
+                        { 
+                            db.save();
+                            BindGrid();
+                            MessageBox.Show($"حذف {name} با موفقیت انجام شد", "موفقیت", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("حذف موفقیت آمیز نبود");
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("لطفا یک کاربر را انتخاب کنید");
+                    }
+
+                }
+                else if (DialogResult == DialogResult.No)
+                {
+                    MessageBox.Show(" روی نو زدی");
+
                 }
                 else
                 {
-                    MessageBox.Show("لطفا یک کاربر را انتخاب کنید");
+                    MessageBox.Show("نشد");
                 }
+
             }
+        }
+
+        private void frmAddOrEdit_Load(object sender, EventArgs e)
+        {
+            BindGrid();
         }
     }
 }
