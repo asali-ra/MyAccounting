@@ -41,7 +41,7 @@
             this.btnCustomer});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(813, 62);
+            this.toolStrip1.Size = new System.Drawing.Size(813, 67);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -51,7 +51,7 @@
             this.btnCustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(113, 59);
+            this.btnCustomer.Size = new System.Drawing.Size(144, 64);
             this.btnCustomer.Text = "اشخاص طرف حساب";
             this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
@@ -59,7 +59,7 @@
             // frmCustomer
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 462);
             this.Controls.Add(this.toolStrip1);
@@ -67,6 +67,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCustomer";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "حسابداری شخصی من";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
