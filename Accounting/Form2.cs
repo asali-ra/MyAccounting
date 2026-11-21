@@ -80,5 +80,11 @@ namespace Accounting
         {
             BindGrid();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ContactInfo contactInfo = new ContactInfo();
+            contactInfo.ShowDialog();
+        }
     }
 }
