@@ -17,5 +17,8 @@ namespace Accounting
             InitializeComponent();
         }
 
+        private void ContactInfo3_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

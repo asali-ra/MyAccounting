@@ -1,7 +1,5 @@
-﻿using Accounting.DataLayer;
-using Accounting.DataLayer.Context;
+﻿using Accounting.DataLayer.Context;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 
@@ -20,13 +18,10 @@ namespace Accounting
         }
         public void BindGrid()
         {
-            UnitOfWork db = new UnitOfWork();
-            List<Customers> allCustomer = db.CustomerRepository.GetAllCustomers();
-            dgCustomer.AutoGenerateColumns = false;
-
-            dgCustomer.DataSource = allCustomer;
-
-
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                dgCustomer.DataSource = db.CustomerRepository.GetAllCustomers();
+            }
 
         }
 
@@ -46,7 +41,7 @@ namespace Accounting
 
                         bool response = db.CustomerRepository.DeleteCustomer(id);
                         if (response)
-                        { 
+                        {
                             db.save();
                             BindGrid();
                             MessageBox.Show($"حذف {name} با موفقیت انجام شد", "موفقیت", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -85,6 +80,20 @@ namespace Accounting
         {
             ContactInfo3 contactInfo = new ContactInfo3();
             contactInfo.ShowDialog();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            BindGrid();
+            txtSearch.Text = "";
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                dgCustomer.DataSource = db.CustomerRepository.GetCustomerByFilter(txtSearch.Text);
+            }
         }
     }
 }

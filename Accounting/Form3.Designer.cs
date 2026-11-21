@@ -32,6 +32,7 @@
             System.Windows.Forms.TextBox txtPhone;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSelectpc = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAddorEdit = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -40,12 +41,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             txtMail = new System.Windows.Forms.TextBox();
             txtPhone = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMail
@@ -84,6 +84,16 @@
             this.btnSelectpc.TabIndex = 9;
             this.btnSelectpc.Text = "انتخاب عکس";
             this.btnSelectpc.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Accounting.Properties.Resources.images;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(211, 240);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -179,17 +189,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "نام و نام خانوادگی :";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Accounting.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 240);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ContactInfo
+            // ContactInfo3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -197,12 +197,14 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "ContactInfo3";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "افزودن یا ویرایش شخص";
+            this.Load += new System.EventHandler(this.ContactInfo3_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

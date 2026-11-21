@@ -1,6 +1,7 @@
 ﻿using Accounting.DataLayer.Repository;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using EntityState = System.Data.Entity.EntityState;
 
 
@@ -67,6 +68,10 @@ namespace Accounting.DataLayer.Service
             catch { return false; }
         }
 
+        public IEnumerable<Customers> GetCustomerByFilter(string parameter)
+        {
+            return db.Customers.Where(c=>c.FullName.Contains(parameter) ||c.Email.Contains(parameter)||c.Mobile.Contains(parameter)).ToList();
+        }
     }
 }
 
