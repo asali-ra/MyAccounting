@@ -83,7 +83,7 @@ namespace Accounting
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ContactInfo contactInfo = new ContactInfo();
+            ContactInfo3 contactInfo = new ContactInfo3();
             contactInfo.ShowDialog();
         }
     }

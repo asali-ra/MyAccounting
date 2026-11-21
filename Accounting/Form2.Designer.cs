@@ -190,7 +190,6 @@
             this.Controls.Add(this.dgCustomer);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmAddOrEdit";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "فرم اشخاص";

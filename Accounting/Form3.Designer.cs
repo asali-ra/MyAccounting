@@ -1,6 +1,6 @@
 ﻿namespace Accounting
 {
-    partial class ContactInfo
+    partial class ContactInfo3
     {
         /// <summary>
         /// Required designer variable.
@@ -158,7 +158,6 @@
             this.label2.Size = new System.Drawing.Size(39, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "موبایل:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtName
             // 
@@ -198,10 +197,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "ContactInfo";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "افزودن یا ویرایش شخص";
-            this.Load += new System.EventHandler(this.ContactInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

@@ -1,6 +1,6 @@
 ﻿namespace Accounting
 {
-    partial class ContactInfo
+    partial class ContactInfo1
     {
         /// <summary>
         /// Required designer variable.
@@ -47,7 +47,7 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.Image = global::Accounting.Properties.Resources._1371476468_preferences_contact_list;
+            this.btnCustomer.Image = global::Accounting.Properties.Resources._1371476468_preferences_contact_list2;
             this.btnCustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCustomer.Name = "btnCustomer";
@@ -56,7 +56,7 @@
             this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
-            // frmCustomer
+            // ContactInfo1
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -65,7 +65,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmCustomer";
+            this.Name = "ContactInfo1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "حسابداری شخصی من";

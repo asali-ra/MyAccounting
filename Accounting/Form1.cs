@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Accounting
 {
-    public partial class ContactInfo : Form
+    public partial class ContactInfo1 : Form
     {
-        public ContactInfo()
+        public ContactInfo1()
         {
             InitializeComponent();
         }

@@ -10,21 +10,12 @@ using System.Windows.Forms;
 
 namespace Accounting
 {
-    public partial class ContactInfo : Form
+    public partial class ContactInfo3 : Form
     {
-        public ContactInfo()
+        public ContactInfo3()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ContactInfo_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
