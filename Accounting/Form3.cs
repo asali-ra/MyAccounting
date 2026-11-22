@@ -20,5 +20,14 @@ namespace Accounting
         private void ContactInfo3_Load(object sender, EventArgs e)
         {
         }
+
+        public void btnSelectpc_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                pcCustomer.ImageLocation = openFile.FileName;
+            }
+        }
     }
 }

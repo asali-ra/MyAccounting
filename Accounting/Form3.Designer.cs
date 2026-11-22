@@ -32,7 +32,7 @@
             System.Windows.Forms.TextBox txtPhone;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSelectpc = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcCustomer = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAddorEdit = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -44,7 +44,7 @@
             txtMail = new System.Windows.Forms.TextBox();
             txtPhone = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcCustomer)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSelectpc);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pcCustomer);
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -84,16 +84,17 @@
             this.btnSelectpc.TabIndex = 9;
             this.btnSelectpc.Text = "انتخاب عکس";
             this.btnSelectpc.UseVisualStyleBackColor = true;
+            this.btnSelectpc.Click += new System.EventHandler(this.btnSelectpc_Click);
             // 
-            // pictureBox1
+            // pcCustomer
             // 
-            this.pictureBox1.Image = global::Accounting.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 240);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pcCustomer.Image = global::Accounting.Properties.Resources.images;
+            this.pcCustomer.Location = new System.Drawing.Point(5, 18);
+            this.pcCustomer.Name = "pcCustomer";
+            this.pcCustomer.Size = new System.Drawing.Size(211, 240);
+            this.pcCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcCustomer.TabIndex = 0;
+            this.pcCustomer.TabStop = false;
             // 
             // groupBox2
             // 
@@ -202,7 +203,7 @@
             this.Text = "افزودن یا ویرایش شخص";
             this.Load += new System.EventHandler(this.ContactInfo3_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcCustomer)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -220,7 +221,7 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSelectpc;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcCustomer;
         private System.Windows.Forms.Button btnAddorEdit;
     }
 }
