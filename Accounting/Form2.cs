@@ -95,5 +95,11 @@ namespace Accounting
                 dgCustomer.DataSource = db.CustomerRepository.GetCustomerByFilter(txtSearch.Text);
             }
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ContactInfo3 contactInfo = new ContactInfo3();
+            contactInfo.ShowDialog();
+        }
     }
 }

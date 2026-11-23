@@ -37,7 +37,7 @@
             this.txtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.dgCustomer = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.txtSearch});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(678, 62);
+            this.toolStrip1.Size = new System.Drawing.Size(640, 62);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -82,6 +82,7 @@
             this.btnEdit.Text = "ویرایش شخص";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEdit.ToolTipText = "ویرایش شخص";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -129,7 +130,7 @@
             this.dgCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.Name,
+            this.FullName,
             this.mobile,
             this.Address,
             this.Email});
@@ -140,7 +141,7 @@
             this.dgCustomer.ReadOnly = true;
             this.dgCustomer.RowHeadersWidth = 62;
             this.dgCustomer.RowTemplate.Height = 28;
-            this.dgCustomer.Size = new System.Drawing.Size(678, 329);
+            this.dgCustomer.Size = new System.Drawing.Size(640, 292);
             this.dgCustomer.TabIndex = 1;
             // 
             // ID
@@ -152,13 +153,12 @@
             this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
-            // Name
+            // FullName
             // 
-            this.Name.DataPropertyName = "FullName";
-            this.Name.HeaderText = "نام";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "نام";
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
             // 
             // mobile
             // 
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 391);
+            this.ClientSize = new System.Drawing.Size(640, 354);
             this.Controls.Add(this.dgCustomer);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -215,7 +215,7 @@
         private System.Windows.Forms.ToolStripTextBox txtSearch;
         private System.Windows.Forms.DataGridView dgCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobile;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;

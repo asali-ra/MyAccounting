@@ -72,13 +72,13 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(221, 303);
+            this.groupBox1.Size = new System.Drawing.Size(221, 291);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // btnSelectpc
             // 
-            this.btnSelectpc.Location = new System.Drawing.Point(5, 267);
+            this.btnSelectpc.Location = new System.Drawing.Point(5, 248);
             this.btnSelectpc.Name = "btnSelectpc";
             this.btnSelectpc.Size = new System.Drawing.Size(211, 23);
             this.btnSelectpc.TabIndex = 9;
@@ -88,13 +88,13 @@
             // 
             // pcCustomer
             // 
-            this.pcCustomer.Image = global::Accounting.Properties.Resources.images;
-            this.pcCustomer.Location = new System.Drawing.Point(5, 18);
-            this.pcCustomer.Name = "pcCustomer";
-            this.pcCustomer.Size = new System.Drawing.Size(211, 240);
-            this.pcCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcCustomer.TabIndex = 0;
-            this.pcCustomer.TabStop = false;
+            this.pictureBox1.Image = global::Accounting.Properties.Resources.images;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(211, 224);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -111,13 +111,13 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(250, 303);
+            this.groupBox2.Size = new System.Drawing.Size(250, 291);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // btnAddorEdit
             // 
-            this.btnAddorEdit.Location = new System.Drawing.Point(162, 276);
+            this.btnAddorEdit.Location = new System.Drawing.Point(161, 263);
             this.btnAddorEdit.Name = "btnAddorEdit";
             this.btnAddorEdit.Size = new System.Drawing.Size(75, 23);
             this.btnAddorEdit.TabIndex = 8;
@@ -126,13 +126,14 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(36, 225);
+            this.txtAddress.Location = new System.Drawing.Point(37, 213);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(200, 45);
             this.txtAddress.TabIndex = 7;
             this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // label4
             // 
@@ -200,6 +201,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ContactInfo3";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "افزودن یا ویرایش شخص";
             this.Load += new System.EventHandler(this.ContactInfo3_Load);
             this.groupBox1.ResumeLayout(false);

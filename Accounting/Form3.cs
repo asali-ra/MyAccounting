@@ -19,6 +19,12 @@ namespace Accounting
 
         private void ContactInfo3_Load(object sender, EventArgs e)
         {
+         
+        }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         public void btnSelectpc_Click(object sender, EventArgs e)
