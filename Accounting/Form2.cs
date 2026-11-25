@@ -80,6 +80,10 @@ namespace Accounting
         {
             ContactInfo3 contactInfo = new ContactInfo3();
             contactInfo.ShowDialog();
+            if (contactInfo.ShowDialog() == DialogResult.OK)
+            {
+                BindGrid();
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

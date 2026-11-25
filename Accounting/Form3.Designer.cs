@@ -28,41 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TextBox txtMail;
-            System.Windows.Forms.TextBox txtPhone;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSelectpc = new System.Windows.Forms.Button();
             this.pcCustomer = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAddorEdit = new System.Windows.Forms.Button();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            txtMail = new System.Windows.Forms.TextBox();
-            txtPhone = new System.Windows.Forms.TextBox();
+            this.txtMobile = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcCustomer)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtMail
-            // 
-            txtMail.Location = new System.Drawing.Point(36, 157);
-            txtMail.Margin = new System.Windows.Forms.Padding(2);
-            txtMail.Name = "txtMail";
-            txtMail.Size = new System.Drawing.Size(200, 20);
-            txtMail.TabIndex = 5;
-            // 
-            // txtPhone
-            // 
-            txtPhone.Location = new System.Drawing.Point(36, 98);
-            txtPhone.Margin = new System.Windows.Forms.Padding(2);
-            txtPhone.Name = "txtPhone";
-            txtPhone.Size = new System.Drawing.Size(200, 20);
-            txtPhone.TabIndex = 3;
             // 
             // groupBox1
             // 
@@ -88,22 +70,22 @@
             // 
             // pcCustomer
             // 
-            this.pictureBox1.Image = global::Accounting.Properties.Resources.images;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 224);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pcCustomer.Image = global::Accounting.Properties.Resources.images;
+            this.pcCustomer.Location = new System.Drawing.Point(5, 18);
+            this.pcCustomer.Name = "pcCustomer";
+            this.pcCustomer.Size = new System.Drawing.Size(211, 224);
+            this.pcCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcCustomer.TabIndex = 0;
+            this.pcCustomer.TabStop = false;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnAddorEdit);
             this.groupBox2.Controls.Add(this.txtAddress);
+            this.groupBox2.Controls.Add(this.txtMail);
+            this.groupBox2.Controls.Add(this.txtMobile);
+            this.groupBox2.Controls.Add(this.btnAddorEdit);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(txtMail);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(txtPhone);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Controls.Add(this.label1);
@@ -123,23 +105,13 @@
             this.btnAddorEdit.TabIndex = 8;
             this.btnAddorEdit.Text = "ثبت";
             this.btnAddorEdit.UseVisualStyleBackColor = true;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(37, 213);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(200, 45);
-            this.txtAddress.TabIndex = 7;
-            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
+            this.btnAddorEdit.Click += new System.EventHandler(this.btnAddorEdit_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.Location = new System.Drawing.Point(194, 194);
+            this.label4.Location = new System.Drawing.Point(194, 203);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -191,6 +163,30 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "نام و نام خانوادگی :";
             // 
+            // txtMobile
+            // 
+            this.txtMobile.Location = new System.Drawing.Point(36, 101);
+            this.txtMobile.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(200, 20);
+            this.txtMobile.TabIndex = 9;
+            // 
+            // txtMail
+            // 
+            this.txtMail.Location = new System.Drawing.Point(36, 168);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(200, 20);
+            this.txtMail.TabIndex = 10;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(36, 222);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(200, 20);
+            this.txtAddress.TabIndex = 11;
+            // 
             // ContactInfo3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,10 +216,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSelectpc;
         private System.Windows.Forms.PictureBox pcCustomer;
         private System.Windows.Forms.Button btnAddorEdit;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.TextBox txtMobile;
     }
 }
