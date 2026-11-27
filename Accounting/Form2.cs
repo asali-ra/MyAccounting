@@ -102,8 +102,18 @@ namespace Accounting
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            ContactInfo3 contactInfo = new ContactInfo3();
-            contactInfo.ShowDialog();
+            if (dgCustomer.CurrentRow != null)
+            {
+                int CustomerId = int.Parse(dgCustomer.CurrentRow.Cells[0].Value.ToString());
+                ContactInfo3 contractInfo = new ContactInfo3();
+                contractInfo.customerId = CustomerId;
+
+                if (contractInfo.ShowDialog == DialogResult.Ok)
+                {
+                    BindGrid();
+                }
+            }
+
         }
     }
 }

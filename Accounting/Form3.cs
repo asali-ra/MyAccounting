@@ -8,6 +8,8 @@ namespace Accounting
 {
     public partial class ContactInfo3 : Form
     {
+        UnitOfWork db = new UnitOfWork();
+        public int customerId = 0;
         public ContactInfo3()
         {
             InitializeComponent();
@@ -15,7 +17,17 @@ namespace Accounting
 
         private void ContactInfo3_Load(object sender, EventArgs e)
         {
+            if (customerId != 0)
+            {
+                this.Text = "ویرایش فرم";
+                btnAddorEdit.Text = "ویرایش";
+                var customer = db.CustomerRepository.GetCustomerById(customerId);
+                txtName.Text = customer.FullName;
+                txtMobile.Text = customer.Mobile;
+                txtAddress.Text = customer.Address;
+                txtMail.Text = customer.Email;
 
+            }
         }
 
         private void txtAddress_TextChanged(object sender, EventArgs e)

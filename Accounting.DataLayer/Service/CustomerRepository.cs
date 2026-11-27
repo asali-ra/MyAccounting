@@ -72,6 +72,11 @@ namespace Accounting.DataLayer.Service
         {
             return db.Customers.Where(c=>c.FullName.Contains(parameter) ||c.Email.Contains(parameter)||c.Mobile.Contains(parameter)).ToList();
         }
+
+        public object GetCustomerByFilter(int customerId)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
 
