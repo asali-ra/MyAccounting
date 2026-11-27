@@ -2,6 +2,7 @@
 using Accounting.DataLayer.Context;
 using System;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Accounting
 {
@@ -33,12 +34,15 @@ namespace Accounting
 
         private void btnAddorEdit_Click(object sender, EventArgs e)
         {
-
-            using (UnitOfWork db = new UnitOfWork())
+            UnitOfWork db = new UnitOfWork();
+            string imageName = Guid.NewGuid().ToString() + Path.GetExtension(pcCustomer.ImageLocation);
+            string path = Application.StartupPath + "/Images";
+            if (!Directory.Exists(path))
             {
-
-                Customers cutomer = new Customers()
-                {
+                Directory.CreateDirectory(path);
+            }
+            Customers cutomer = new Customers()
+            {
                     FullName = txtName.Text,
                     Mobile = txtMobile.Text,
                     Email = txtMail.Text,
@@ -46,15 +50,15 @@ namespace Accounting
                     Image = pcCustomer.ImageLocation
                 };
 
-                bool result = db.CustomerRepository.InsertCustomer(cutomer);
-                if (result)
-                {
-                    DialogResult = DialogResult.OK;
-                    db.save();
-                }
-
-
+            bool result = db.CustomerRepository.InsertCustomer(cutomer);
+            if (result)
+            {
+                DialogResult = DialogResult.OK;
+                db.save();
             }
+
+
+
         }
     }
 }
