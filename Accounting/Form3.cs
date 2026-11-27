@@ -8,7 +8,6 @@ namespace Accounting
 {
     public partial class ContactInfo3 : Form
     {
-        UnitOfWork db = new UnitOfWork();
         public int customerId = 0;
         public ContactInfo3()
         {
@@ -17,16 +16,19 @@ namespace Accounting
 
         private void ContactInfo3_Load(object sender, EventArgs e)
         {
-            if (customerId != 0)
+            using (UnitOfWork db = new UnitOfWork())
             {
-                this.Text = "ویرایش فرم";
-                btnAddorEdit.Text = "ویرایش";
-                var customer = db.CustomerRepository.GetCustomerById(customerId);
-                txtName.Text = customer.FullName;
-                txtMobile.Text = customer.Mobile;
-                txtAddress.Text = customer.Address;
-                txtMail.Text = customer.Email;
-
+                if (customerId != 0)
+                {
+                    this.Text = "ویرایش فرم";
+                    btnAddorEdit.Text = "ویرایش";
+                    var customer = db.CustomerRepository.GetCustomerById(customerId);
+                    txtName.Text = customer.FullName;
+                    txtMobile.Text = customer.Mobile;
+                    txtAddress.Text = customer.Address;
+                    txtMail.Text = customer.Email;
+                    pcCustomer.ImageLocation = Application.StartupPath + "/Images/" + customer.Image;
+                }
             }
         }
 
@@ -46,15 +48,17 @@ namespace Accounting
 
         private void btnAddorEdit_Click(object sender, EventArgs e)
         {
-            UnitOfWork db = new UnitOfWork();
-            string imageName = Guid.NewGuid().ToString() + Path.GetExtension(pcCustomer.ImageLocation);
-            string path = Application.StartupPath + "/Images";
-            if (!Directory.Exists(path))
+            using (UnitOfWork db = new UnitOfWork())
             {
-                Directory.CreateDirectory(path);
-            }
-            Customers cutomer = new Customers()
-            {
+                string imageName = Guid.NewGuid().ToString() + Path.GetExtension(pcCustomer.ImageLocation);
+                string path = Application.StartupPath + "/Images";
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                Customers customer = new Customers()
+                {
                     FullName = txtName.Text,
                     Mobile = txtMobile.Text,
                     Email = txtMail.Text,
@@ -62,13 +66,19 @@ namespace Accounting
                     Image = pcCustomer.ImageLocation
                 };
 
-            bool result = db.CustomerRepository.InsertCustomer(cutomer);
-            if (result)
-            {
+                if (customerId == 0)
+                {
+                    bool result = db.CustomerRepository.InsertCustomer(customer);
+
+                }
+                else
+                {
+                    customer.CustomerID = customerId;
+                    db.CustomerRepository.UpdateCustomer(customer);
+                }
                 DialogResult = DialogResult.OK;
                 db.save();
             }
-
 
 
         }

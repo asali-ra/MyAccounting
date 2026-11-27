@@ -106,7 +106,7 @@ namespace Accounting
             {
                 int CustomerId = int.Parse(dgCustomer.CurrentRow.Cells[0].Value.ToString());
                 ContactInfo3 contractInfo = new ContactInfo3();
-                contractInfo.customerId = CustomerId;
+                contractInfo.CustomerId = CustomerId;
 
                 if (contractInfo.ShowDialog == DialogResult.Ok)
                 {

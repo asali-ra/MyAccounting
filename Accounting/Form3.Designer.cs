@@ -66,7 +66,7 @@
             this.btnSelectpc.TabIndex = 9;
             this.btnSelectpc.Text = "انتخاب عکس";
             this.btnSelectpc.UseVisualStyleBackColor = true;
-            this.btnSelectpc.Click += new System.EventHandler(this.btnSelectpc_Click);
+            //this.btnSelectpc.Click += new System.EventHandler(this.btnSelectpc_Click);
             // 
             // pcCustomer
             // 
@@ -105,7 +105,7 @@
             this.btnAddorEdit.TabIndex = 8;
             this.btnAddorEdit.Text = "ثبت";
             this.btnAddorEdit.UseVisualStyleBackColor = true;
-            this.btnAddorEdit.Click += new System.EventHandler(this.btnAddorEdit_Click);
+//            this.btnAddorEdit.Click += new System.EventHandler(this.btnAddorEdit_Click);
             // 
             // label4
             // 
